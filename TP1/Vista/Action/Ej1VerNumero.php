@@ -1,3 +1,16 @@
+<?php
+
+
+include_once "../../Utils/DataSubmited.php";
+include_once "../../Control/1verNumero.php";
+
+$datos = dataSubmitted();
+
+$obj = new control();
+
+$respuesta = $obj->darRespuesta($datos);
+$numero = $datos ['numero'];
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,17 +19,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
     
-    <form action="1vernumero.php" method="post">
-
-        <label for="Numero">Ingrese un numero: </label>
-        <input type="number" name="numero" id="numero">
-        <button type="submit">Enviar</button>
-
-    </form>
+    <?php
+    echo "El numero ingresado:" .$numero. "es". $respuesta;
+    ?>
 
 </body>
-
 </html>
