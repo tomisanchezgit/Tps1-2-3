@@ -3,7 +3,6 @@
 class control{
 
 
-
    public function darRespuesta($datos){
 
         if($datos['numero'] == 0){

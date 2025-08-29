@@ -2,14 +2,15 @@
 
 
 include_once "../../Utils/DataSubmited.php";
-include_once "../../Control/1verNumero.php";
+include_once "../../Control/7calcu.php";
+
 
 $datos = dataSubmitted();
 
 $obj = new control();
 
-$respuesta = $obj->darRespuesta($datos);
-$numero = $datos ['numero'];
+$respuesta = $obj->operacion($datos);
+
 ?>
 
 <!DOCTYPE html>
@@ -20,10 +21,8 @@ $numero = $datos ['numero'];
     <title>Document</title>
 </head>
 <body>
-    
     <?php
-    echo "El numero ingresado: " .$numero. " es ". $respuesta;
-    ?>
-
+    echo $respuesta;
+    ?>  
 </body>
 </html>

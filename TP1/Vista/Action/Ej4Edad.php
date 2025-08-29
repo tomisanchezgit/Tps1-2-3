@@ -2,15 +2,18 @@
 
 
 include_once "../../Utils/DataSubmited.php";
-include_once "../../Control/1verNumero.php";
+include_once "../../Control/4Edad.php";
+
 
 $datos = dataSubmitted();
 
 $obj = new control();
 
-$respuesta = $obj->darRespuesta($datos);
-$numero = $datos ['numero'];
+$respuesta = $obj->mayoromenor($datos);
+
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,9 +24,10 @@ $numero = $datos ['numero'];
 </head>
 <body>
     
-    <?php
-    echo "El numero ingresado: " .$numero. " es ". $respuesta;
-    ?>
+<?php
 
+    echo $respuesta;
+
+?>
 </body>
 </html>

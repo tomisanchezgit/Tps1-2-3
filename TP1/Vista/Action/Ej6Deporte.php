@@ -2,14 +2,16 @@
 
 
 include_once "../../Utils/DataSubmited.php";
-include_once "../../Control/1verNumero.php";
+include_once "../../Control/6FormDeporte.php";
+
 
 $datos = dataSubmitted();
 
 $obj = new control();
 
-$respuesta = $obj->darRespuesta($datos);
-$numero = $datos ['numero'];
+$respuesta = $obj->retornarform($datos);
+$respuesta2= $obj->darDeportes($datos);
+
 ?>
 
 <!DOCTYPE html>
@@ -20,10 +22,9 @@ $numero = $datos ['numero'];
     <title>Document</title>
 </head>
 <body>
-    
     <?php
-    echo "El numero ingresado: " .$numero. " es ". $respuesta;
-    ?>
-
+    echo $respuesta;
+    echo "Cantidad de deportes que hace: $respuesta2 "; 
+    ?>  
 </body>
 </html>
